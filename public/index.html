@@ -17,10 +17,15 @@
         <pre class="code">
             <h2>Hooks - Counter in functional component</h2>
 <code class="language-jsx">
-    import React, { useState } from &quot;react&quot;;
+    import React, { useState, useEffect } from &quot;react&quot;;
 
     const HooksCounter = () =&gt; {
         const [counter, setCounter] = useState(0);
+
+        useEffect(() =&gt; {
+            document.title = `You clicked ${counter} times`;
+        });
+
         return (
             &lt;button onClick={() =&gt; setCounter(counter + 1)}&gt;
                 Click me! - {counter}
@@ -42,6 +47,14 @@
             this.state = {
                 counter: 0
             };
+        }
+
+        componentDidMount() {
+            document.title = `You clicked ${this.state.counter} times`;
+        }
+
+        componentDidUpdate() {
+            document.title = `You clicked ${this.state.counter} times`;
         }
 
         render() {

@@ -7,8 +7,8 @@ import HooksCounter from "./components/hooksCounter";
 
 ReactDOM.render(
 	<Fragment>
-		<Counter />
 		<HooksCounter />
+		<Counter />
 	</Fragment>,
 	document.getElementById("root")
 );

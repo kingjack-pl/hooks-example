@@ -8,6 +8,14 @@ class Counter extends Component {
 		};
 	}
 
+	componentDidMount() {
+		document.title = `You clicked ${this.state.counter} times`;
+	}
+
+	componentDidUpdate() {
+		document.title = `You clicked ${this.state.counter} times`;
+	}
+
 	render() {
 		return (
 			<button
